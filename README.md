@@ -13,3 +13,7 @@ OUTPUT2="$(</dev/urandom tr -dc 'A-Za-z0-9' | head -c 5)" ; echo $OUTPUT2 ; echo
 
 #This is possible to use but does not funtion correctly yet
 #</dev/urandom tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' | head -c 13  ; echo
+
+
+
+unalias -a ; OUTPUT1="$(</dev/urandom tr -dc 'A-Za-z0-9' | head -c 5 )" ; echo $OUTPUT1 ; echo "is the character a" ; alias $OUTPUT1="echo "a" >> file.txt" ; OUTPUT2="$(</dev/urandom tr -dc 'A-Za-z0-9' | head -c 5 )" ; echo $OUTPUT2 ; echo "is the character b" ; alias $OUTPUT2="echo "b" >> file.txt" 
