@@ -20,3 +20,12 @@ unalias -a ; OUTPUT1="$(</dev/urandom tr -dc 'A-Za-z0-9' | head -c 5 )" ; echo $
 
 
 unalias -a ; OUTPUT1="$(</dev/urandom tr -dc 'A-Za-z0-9' | head -c 5 )" ; echo $OUTPUT1 ; echo "is the character a" ; alias $OUTPUT1="echo "a" >> file.txt" ; OUTPUT2="$(</dev/urandom tr -dc 'A-Za-z0-9' | head -c 5 )" ; echo $OUTPUT2 ; echo "is the character b" ; alias $OUTPUT2="echo "b" >> file.txt"
+
+
+
+#Run this command for randomized input numbers for characters 
+unalias -a ; alias $RANDOM="echo "{a..z}" >> text.txt"
+#Run alias to see the numbers associated with the characters
+
+$Full command
+unalias -a ; alias $RANDOM="echo "{a..z}" >> text.txt" ; alias $RANDOM="echo "{A..Z}" >> text.txt" ; alias $RANDOM="echo "{0..9}" >> text.txt
